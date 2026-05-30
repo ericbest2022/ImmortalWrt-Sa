@@ -1,13 +1,14 @@
+#
+# Copyright (c) 2019-2020 P3TERX <https://p3terx.com>
+#
+# This is free software, licensed under the MIT License.
+# See /LICENSE for more information.
+#
+# https://github.com/P3TERX/Actions-OpenWrt
+# Description: Build OpenWrt using GitHub Actions
+#
+
 name: MT7981-padavanonly-24.10-6.6
-
-on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      clean:
-         description: '是否清理ccache'
-         default: 'false'
-
 
 # ==================== 环境变量配置 ====================
 env:
@@ -22,6 +23,22 @@ env:
   TZ: Asia/Shanghai
 
 # ==================== 编译任务定义 ====================
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+      clean:
+         description: '是否清理ccache'
+         default: 'false'
+  schedule:
+    - cron: 0 15 * * 2
+        # 分,时,日,月,周。每周 二 15时执行一次 (UTC时间)
+
+
 jobs:
   build:
     runs-on: ubuntu-22.04
