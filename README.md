@@ -7,7 +7,6 @@
 # padavanonly 24.10
 - Cudy TR3000
 - 360T7
-- xiaomi AX3000T
 
 
 
