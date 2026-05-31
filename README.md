@@ -1,7 +1,6 @@
 # immortalWrt 25.12
 - Cudy TR3000
 - 360T7
-- xiaomi AX3000T
 - R3G
 
 
