@@ -15,8 +15,8 @@ permissions: write-all
 
 # ==================== 环境变量配置 ====================
 env:
-  REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
-  REPO_BRANCH: openwrt-24.10-6.6
+  REPO_URL: https://github.com/immortalwrt/immortalwrt.git
+  REPO_BRANCH: openwrt-25.12
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: 360t7.config
   DIY_P1_SH: diy-part1.sh
@@ -177,8 +177,8 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
          time=$(date +"%Y.%m.%d-%H%M")
-         release_tag="360t7-ImmortalWrt-padavanonly-2410-$time"
-         release_name="360t7-ImmortalWrt-padavanonly-2410-$time"
+         release_tag="360t7-ImmortalWrt-2512-$time"
+         release_name="360t7-ImmortalWrt-2512-$time"
 
          cat > release.txt <<EOF
          ## 📦 固件信息
