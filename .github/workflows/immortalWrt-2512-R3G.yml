@@ -13,6 +13,21 @@ name: immortalWrt-25.12-R3G
 permissions: write-all
 #开启写权限，防止无法上传到release
 
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: false
+        default: 'false'
+      clean:
+         description: '是否清理ccache'
+         default: 'false'
+  schedule:
+   - cron: 0 4 * * 1
+        # 分,时,日,月,周。每周 日 18时执行一次 (UTC时间)，实际 每周 一 2时执行一次 (UTC+8时间)
+
 # ==================== 环境变量配置 ====================
 env:
   REPO_URL: https://github.com/immortalwrt/immortalwrt.git
@@ -26,21 +41,6 @@ env:
   TZ: Asia/Shanghai
 
 # ==================== 编译任务定义 ====================
-on:
-  repository_dispatch:
-  workflow_dispatch:
-    inputs:
-      ssh:
-        description: 'SSH connection to Actions'
-        required: false
-        default: 'false'
-      clean:
-         description: '是否清理ccache'
-         default: 'false'
-  schedule:
-    - cron: 0 18 * * 0
-        # 分,时,日,月,周。每周 日 18时执行一次 (UTC时间)，实际 每周 一 2时执行一次 (UTC+8时间)
-
 
 jobs:
   build:
