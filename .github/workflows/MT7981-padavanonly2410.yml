@@ -168,8 +168,8 @@ jobs:
       if: env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
          time=$(date +"%Y.%m.%d-%H%M")
-         release_tag="MT7981-ImmortalWrt-2410-$time"
-         release_name="MT7981-ImmortalWrt-2410-$time"
+         release_tag="MT7981-ImmortalWrt-padavanonly-2410-$time"
+         release_name="MT7981-ImmortalWrt-padavanonly-2410-$time"
 
          cat > release.txt <<EOF
          ## 📦 固件信息
