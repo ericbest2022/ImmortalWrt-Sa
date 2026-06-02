@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: immortalWrt-25.12-TR3000
+name: immortalWrt2512-TR3000
 
 permissions: write-all
 #开启写权限，防止无法上传到release
