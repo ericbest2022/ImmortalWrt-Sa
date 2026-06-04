@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 
-name: MT7981A01-padavanonly
+name: MT7981A01-Padavanonly2410
 
 permissions: write-all
 #开启写权限，防止无法上传到release
@@ -118,12 +118,6 @@ jobs:
         ./scripts/feeds update -a
         ./scripts/feeds install -a
 
-    - name: 加载自定义 feeds 配置
-      run: |
-        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
-        chmod +x $DIY_P1_SH
-        cd openwrt
-        $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: 导入补丁和配置 & 执行脚本
       run: |
