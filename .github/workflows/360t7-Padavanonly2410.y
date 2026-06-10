@@ -196,7 +196,7 @@ jobs:
       run: |
         VERSION1="${REPO_BRANCH#*-}"
         echo -e "🎉 360t7\n✅ ${VERSION1} 源码\n❗️ ip地址 : 192.168.66.1" >> release.txt
-        echo "release_tag=$(date +"%Y.%m.%d-${VERSION1}_360t7_padavanonly")" >> $GITHUB_OUTPUT
+        echo "release_tag=$(date +"%Y.%m.%d-%H%M-${VERSION1}_360t7_padavanonly")" >> $GITHUB_OUTPUT
         echo "status=success" >> $GITHUB_OUTPUT
 
     - name: 上传固件到发布
